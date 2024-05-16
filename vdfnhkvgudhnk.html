@@ -1,0 +1,108 @@
+
+ <!-- Days Calculator
+<div class="calculator">
+    <h2>Event Days Calculator</h2>
+    <label  for="event1">Event 1:</label>
+    <select id="event1">
+        <!-- Populate this with the names of your events -->
+        <option value="diwali">Diwali</option>
+        <option value="christmas">Christmas</option>
+        <!-- Add other events here -->
+    </select>
+
+    <label for="event2">Event 2:</label>
+    <select id="event2">
+        <!-- Populate this with the names of your events -->
+        <option value="christmas">Christmas</option>
+        <option value="newyear">New Year</option>
+        <!-- Add other events here -->
+    </select>
+
+    <button onclick="calculateDaysBetweenEvents()">Calculate Days</button>
+
+    <p id="result"></p>
+</div>  -->
+
+
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- Add your stylesheet links here -->
+
+    <style>
+        /* Add your CSS styles here */
+        /* ... */
+    </style>
+</head>
+<body>
+    <!-- Your existing HTML code -->
+
+    <!-- Countdown Comparison Calculator -->
+    <div class="calculator">
+        <h2>Countdown Comparison Calculator</h2>
+        <label for="event1">Event 1:</label>
+        <select id="event1">
+            <!-- Populate this with the names of your events -->
+            <option value="diwali">Diwali</option>
+            <option value="christmas">Christmas</option>
+            <!-- Add other events here -->
+        </select>
+
+        <label for="event2">Event 2:</label>
+        <select id="event2">
+            <!-- Populate this with the names of your events -->
+            <option value="christmas">Christmas</option>
+            <option value="newyear">New Year</option>
+            <!-- Add other events here -->
+        </select>
+
+        <button onclick="updateCountdownComparison()">Calculate Countdown</button>
+
+        <p id="countdownResult"></p>
+    </div>
+
+    <script>
+        // Your existing JavaScript code
+
+        // Function to calculate the countdown for an event
+        function calculateCountdown(event) {
+            const currentDate = new Date();
+            const eventDate = new Date(eventDates[event]);
+            const timeDiff = eventDate - currentDate;
+            const daysRemaining = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+            return daysRemaining;
+        }
+
+        // Function to update the countdown comparison result
+        function updateCountdownComparison() {
+            const event1 = document.getElementById('event1').value;
+            const event2 = document.getElementById('event2').value;
+
+            const countdownEvent1 = calculateCountdown(event1);
+            const countdownEvent2 = calculateCountdown(event2);
+
+            const resultElement = document.getElementById('countdownResult');
+            resultElement.innerHTML = `Days remaining for ${event1}: ${countdownEvent1} days<br>`;
+            resultElement.innerHTML += `Days remaining for ${event2}: ${countdownEvent2} days<br>`;
+
+            if (countdownEvent1 < countdownEvent2) {
+                resultElement.innerHTML += `${event1} is sooner!`;
+            } else if (countdownEvent1 > countdownEvent2) {
+                resultElement.innerHTML += `${event2} is sooner!`;
+            } else {
+                resultElement.innerHTML += `Both events are on the same day!`;
+            }
+        }
+    </script>
+    
+    <!-- Your existing footer code -->
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+
+
+:root{
+    --blue:#0188DF;
+    --black:#354046;
+    --red:#FC4F4F;
+  }
+  * {
+      box-sizing: border-box;
+  }
+  
+  body {
+      color: #2C405E;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+  }
+  
+  header {
+      background-image: url('images/comingsoon.jpg');
+      background-size: cover;
+      background-position: center center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 600px;	
+      position: relative;
+  }
+  
+   nav {   /* home/pages vgara */
+      background-color: #fff;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 10px;
+  }
+  
+  nav p {   /*for wedding planer */
+      color: var(--red);
+      font-size: 20px;
+      font-weight: bold;
+      margin: 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+  }
+  
+  .burger {
+      border: 0;
+      cursor: pointer;
+      display: none;
+      font-size: 22px;
+      position: relative;
+      padding: 0;
+      outline: none;
+      height: 30px;
+      width: 30px;
+  }
+  
+  .burger:active {
+      color: var(--red);
+      outline: none;
+  }
+  
+  .burger .bar {
+      background-color: var(--red);
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0deg);
+      height: 3px;
+      width: 20px;
+      transition: transform 0.2s ease;
+  }
+  
+  .burger .bar:first-of-type {
+      top: 40%;
+  }
+  
+  .burger .bar:last-of-type {
+      top: 60%;
+  }
+  
+  ul {  /* list for home pages */
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+  }
+  
+  ul li {
+      margin: 0 10px;
+  }
+  
+  ul li a {
+      color: var(--black);
+      position: relative;
+      text-decoration: none;
+  }
+  
+  .hh::after {  /* add transition under the home/galllery/contact                    */
+      content: '';
+      background-color: var(--red);
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      opacity: 0;
+      height: 2px;
+      width: 100%;
+      transition: transform 0.1s ease;  
+  }
+  
+  ul li a:hover::after {
+      opacity: 1;
+      transform: translateY(-15px);
+  }
+  
+  @media screen and (max-width: 480px) { /* isse specific css proprty apply krte h */
+      
+      .burger {
+          display: block;
+      }
+      
+      .burger.show-x .bar:first-of-type {
+          transform: translate(-50%, 50%) rotate(225deg);
+      }
+      
+      .burger.show-x .bar:last-of-type {
+          transform: translate(-50%, -150%) rotate(-225deg);
+      }
+      
+      ul {    /* alll page design for ul dropdowns */
+          background-color: #fff;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+          flex-direction: column;
+          text-align: left;
+          position: fixed;
+          top: 80px;
+          left: 10%;
+          transform: translateX(120%);
+          width: 80%;
+          transition: transform 0.3s ease-in;
+          z-index: 100;
+      }
+      
+      ul.show {
+          transform: translateX(0);
+      }
+      
+      ul li {
+          margin: 15px;
+      }
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .navbar a:hover {
+    background-color:#FC4F4F;
+  }
+  
+  .dropdown-content { /*dropdown box edit */
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 30px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {  /* dropdown data design */
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: var(--red);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+  
+  .container-photo {   /* numbers */
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .container-photo li {  /* days/--- */
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+  .container-photo li span {  /* after days */
+    display: block;
+    font-size: 4.5rem;
+  }
+  
+  @media all and (max-width: 768px) {   /* to add specific property of css */
+    
+    .container-photo li {
+      font-size: calc(1.125rem * var(--smaller));
+    }
+    
+    .container-photo li span {
+      font-size: calc(3.375rem * var(--smaller));
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  .diwali {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 25px;
+    color: #000;
+  }
+  
+  .diwali span {
+    display: block;
+    font-size: 50px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:#000;
+    margin-bottom:10px;
+    text-align:center;
+  
+    
+  }
+  .diwali img {
+    margin: 20px;
+    border-radius: 20%;
+  }
+      
+  
+  
+  
+  
+  
+  
+  
+
+
+  
